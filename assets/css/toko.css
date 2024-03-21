@@ -112,14 +112,16 @@
 
 .teks-di-depan {
     position: absolute;
-    top: 38%; /* Sesuaikan posisi teks vertikal */
-    left: 45%; /* Sesuaikan posisi teks horizontal */
+    top: 40%; /* Sesuaikan posisi teks vertikal */
+    left: 50%; /* Tetapkan posisi awal di tengah horizontal */
+    transform: translateX(-50%); /* Geser ke kiri sebanyak setengah lebar teks */
     color: white; /* Warna teks */
     font-size: 5vw; /* Ukuran font */
     font-weight: bold; /* Ketebalan font */
     text-shadow: 2px 2px 2px black; /* Efek bayangan teks */
     z-index: 1; /* Pastikan teks tampil di atas gambar */
-  }
+}
+
   
 
 .text-container {
