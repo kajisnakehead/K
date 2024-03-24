@@ -1,0 +1,52 @@
+.containerCorosel {
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap; /* Agar slide berada dalam satu baris */
+    font-size: 0; /* Menangani spasi putih di antara elemen inline-block */
+}
+
+.slide {
+    width: calc(100% / 3); /* Mengatur lebar slide agar tiga slide terlihat sekaligus */
+    display: inline-block; /* Slide ditampilkan dalam satu baris */
+    vertical-align: top; /* Menghilangkan ruang putih di bagian bawah slide */
+    font-size: 1rem; /* Mengembalikan ukuran font ke nilai default */
+}
+
+.gambar-container1 {
+    text-align: center; /* Memastikan gambar berada di tengah */
+    margin: 10px; /* Memberi jarak antara gambar */
+}
+
+.gambar1 {
+    max-width: 100%; /* Mengatur lebar maksimum gambar agar tidak melebihi lebar slide */
+    height: auto; /* Memastikan gambar tetap proporsional */
+}
+
+.prevIndex, .nextIndex {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #8787876f;
+    border: none;
+    padding: 1vw 2vw; /* Menggunakan vw untuk membuat ukuran padding responsif */
+    cursor: pointer;
+    font-size: 6vw;
+    border-radius: 4vw;
+    color: rgb(0, 0, 0);/* Menggunakan vw untuk membuat ukuran font responsif */
+}
+
+
+.prevIndex {
+    left: 0; /* Menempatkan tombol "Previous" di sebelah kiri carousel */
+}
+
+.nextIndex {
+    right: 0; /* Menempatkan tombol "Next" di sebelah kanan carousel */
+}
