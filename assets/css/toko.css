@@ -3,7 +3,7 @@
     position: relative;
     display: inline-block;
     margin: 10px;
-    height: 58vw;
+    height: 59vw;
 }
 
 .gambar-container {
@@ -135,7 +135,7 @@
     left: 50%; /* Tetapkan posisi awal di tengah horizontal */
     transform: translateX(-50%); /* Geser ke kiri sebanyak setengah lebar teks */
     color: white; /* Warna teks */
-    font-size: 5vw; /* Ukuran font */
+    font-size: 4vw; /* Ukuran font */
     font-weight: bold; /* Ketebalan font */
     text-shadow: 2px 2px 2px black; /* Efek bayangan teks */
     z-index: 1; /* Pastikan teks tampil di atas gambar */
@@ -233,11 +233,13 @@
 }
 
 .containerBawah {
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3vw;
   }
+
 
   .tombolBawah {
     
@@ -250,12 +252,18 @@
     font-size: 5vw;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 50%; /* Membuat bentuk bulat */
+    border-radius: 50%;
   }
 
   .previous, .next {
-    border-radius: 5px; /* Mengubah bentuk menjadi lebih kotak */
+    position: absolute;
+    background-color: #8787876f;
+    border: none;
+    padding: 1vw 2vw; /* Menggunakan vw untuk membuat ukuran padding responsif */
+    cursor: pointer;
     font-size: 6vw;
+    border-radius: 4vw;
+    color: rgb(0, 0, 0);
   }
 
   .Nonaktif{
@@ -265,11 +273,13 @@
   .previous {
     background-color: #ffffff; /* Warna hijau */
     margin-right: 20%;
+    left: 0;
   }
 
   .next {
     background-color: #ffffff; /* Warna biru */
-    margin-left: 20vw; /* Menambahkan jarak di sebelah kiri tombol "Next" */
+    margin-left: 20vw;
+    right: 0;
   }
 
   .tengah {
@@ -277,6 +287,11 @@
     border-radius: 50%; /* Menjaga bentuk bulat */
     font-size: 2vw;
   }
+
+  
+
+
+
 
 @media screen and (max-width: 375px) {
     .gambar-container {
