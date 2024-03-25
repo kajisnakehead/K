@@ -1,3 +1,11 @@
+.gambar-containerNew {
+    width: 44%; /* agar gambar terlihat lebih baik dalam layout 2 kolom */
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    height: 58vw;
+}
+
 .gambar-container {
     width: 44%; /* agar gambar terlihat lebih baik dalam layout 2 kolom */
     position: relative;
@@ -186,6 +194,26 @@
     line-height: 1.1;
 }
 
+.TextKeterangan {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    bottom:8vw; /* posisi tombol di bagian bawah */
+    left: 50%; /* posisi tombol di tengah secara horizontal */
+    transform: translateX(-50%); /* menggeser tombol ke kiri sebesar setengah dari lebar tombol */
+     /* warna dapat disesuaikan */
+    font-size: 2.5vw;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 1vw; /* Menggunakan persentase untuk padding */
+    border-radius: 3px;
+    cursor: pointer; 
+    z-index: 1;
+    line-height: 1.1;
+}
+
 .TextTerjual {
     width: 100%;
     height: auto;
@@ -247,6 +275,7 @@
   .tengah {
     background-color: #ffffff; /* Warna merah */
     border-radius: 50%; /* Menjaga bentuk bulat */
+    font-size: 2vw;
   }
 
 @media screen and (max-width: 375px) {
