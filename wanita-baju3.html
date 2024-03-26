@@ -131,166 +131,86 @@ TemplateMo 571 Hexashop
         <span class="teks-di-depan">Atasan Wanita</span>
     </div>
 
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/id-11134207-7qula-lh8kf98t39te99.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/6fK0bWeEB1')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
+    <div id="DataListing"></div>
 
-        <span class="TextHarga">
-            <del>Rp 110.000</del> / Rp 55.000,-<br>
-            <span style="font-size: 2vw;">9.4Rb Terjual</span>
-        </span>
+    <!-- JavaScript untuk memuat data dari CSV -->
+    <script>
+        // Fungsi untuk mengambil data dari file CSV
+        function getDataFromCSV() {
+            // URL file CSV
+            const csvUrl = 'assets/database/wanita-baju.csv';
 
-        <img src="assets/images/50.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
+            // Lakukan request untuk mengambil file CSV
+            fetch(csvUrl)
+                .then(response => response.text())
+                .then(data => {
+                    // Parsing data CSV
+                    const rows = data.split('\n');
+                    const items = [];
 
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/id-11134207-7r992-ls4ed3angffrf7.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/7KZhOoVoO0')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-        
-        <span class="TextHarga">
-            <del>Rp 51.000</del> / Rp 25.500,-<br>
-            <span style="font-size: 2vw;">149Rb Terjual</span>
-        </span>
+                    // Loop melalui setiap baris CSV
+                    rows.forEach(row => {
+                        const columns = row.split(',');
+                        items.push(columns);
+                    });
 
-        <img src="assets/images/50.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
+                    // Memotong array items untuk membatasi hanya 12 baris
+                    const slicedItems = items.slice(24, 36);
 
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/id-11134207-7r98z-lpnhbjrq7m8qb7.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/AUWjAk3amD')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
+                    // Menampilkan DataListing
+                    const DataListing = document.getElementById('DataListing');
+                    slicedItems.forEach(item => {
+                        const html = `
+                            <div class="gambar-containerNew">
+                                <img src="${item[0]}" alt="Gambar 1" class="gambar">
+                                <button class="tombol" onclick="navigateToPage('${item[1]}')" rel="nofollow">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
 
-        <span class="TextHarga">
-            <del>Rp 82.862</del> / Rp 57.999,-<br>
-            <span style="font-size: 2vw;">16.5Rb Terjual</span>
-        </span>
+                                <span class="TextKeterangan" style="font-size: 2.5vw;">
+                                    ${item[7]}
+                                </span>
 
-        <img src="assets/images/30.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
+                                <span class="TextHarga">
+                                    <del>Rp ${item[4]}</del> / Rp ${item[2]},-<br>
+                                    <span style="font-size: 2vw;">${item[5]}Rb Terjual</span>
+                                </span>
 
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/id-11134207-7r98p-ln4k1ghpwiof63.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/10fed0afC2')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
+                                <img src="${item[6]}" alt="Gambar 2" class="gambarDisc">
+                                <img src="assets/images/${item[9]}" alt="Gambar 3" class="gambarStatus">
+                            </div>
+                        `;
+                        DataListing.innerHTML += html;
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
 
-        <span class="TextHarga">
-            <del>Rp 126.460</del> / Rp 88.500,-<br>
-            <span style="font-size: 2vw;">22.7Rb Terjual</span>
-        </span>
+        // Panggil fungsi untuk mengambil data saat halaman dimuat
+        window.onload = getDataFromCSV;
 
-        <img src="assets/images/30.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
+        // Fungsi untuk mengarahkan pengguna ke halaman lain
+        function navigateToPage(url) {
+            // Mengarahkan pengguna ke halaman yang ditentukan dalam parameter url
+            window.location.href = url;
+        }
+    </script>
 
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/sg-11134201-7rbls-lq5wllgr8q7ed7.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/3fgPo0tA2K')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-
-        <span class="TextHarga">
-            <del>Rp 79.850</del> / Rp 55.900,-<br>
-            <span style="font-size: 2vw;">23.1Rb Terjual</span>
-        </span>
-
-        <img src="assets/images/30.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
-
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/id-11134207-7r98u-lsi29qlujeiuca.webp" alt="Gambar 1" class="gambar">
-        
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/1LIV1y0Nsz')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-
-        <span class="TextHarga">
-            <del>Rp 183.500</del> / Rp 128.500,-<br>
-            <span style="font-size: 2vw;">6.3Rb Terjual</span>
-        </span>
-
-        <img src="assets/images/30.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
-
-
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/id-11134207-7r98p-lp6kh4ayt3fl4a.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/LPxqGE9u7')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-
-        <span class="TextHarga">
-            <del>Rp 99.998</del> / Rp 59.999,-<br>
-            <span style="font-size: 2vw;">13.8Rb Terjual</span>
-        </span>
-
-        <img src="assets/images/40.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
-
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/sg-11134201-23010-v9bmwxgcyemvbf.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/6ANkn577vW')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-
-        <span class="TextHarga">
-            <del>Rp 132.500</del> / Rp 105.999,-<br>
-            <span style="font-size: 2vw;">32.6Rb Terjual</span>
-        </span>
-
-        <img src="assets/images/20.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
-
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/ad68a08b9cf01647865ed5ffca86726b.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/9excxe7tY4')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-
-        <span class="TextHarga">
-            <del>Rp 84.300</del> / Rp 59.000,-<br>
-            <span style="font-size: 2vw;">39.1Rb Terjual</span>
-        </span>
-
-        <img src="assets/images/30.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
-
-    <div class="gambar-container">
-        <img src="https://down-tx-id.img.susercontent.com/id-11134207-7r98z-lqvs4n3w0qiu08.webp" alt="Gambar 1" class="gambar">
-        <button class="tombol" onclick="navigateToPage('https://shope.ee/5V84067rrl')" rel="nofollow">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-
-        <span class="TextHarga"><del>Rp 157.141</del> / Rp 109.999,-<br>
-            <span style="font-size: 2vw;">2.5Rb Terjual (couple)</span>
-        </span>
-
-        <img src="assets/images/30.jpg" alt="Gambar 2" class="gambarDisc">
-        <img src="assets/images/star.png" alt="Gambar 3" class="gambarStatus">
-    </div>
-
+    
+    
     <div class="containerBawah">
         <button class="tombolBawah previous" 
         onclick="navigateToPage('wanita-baju2.html')"><i class="fa-solid fa-arrow-left-long"></i></button>
         <button class="tombolBawah tengah"><i class="fa-solid fa-circle"></i></button>
         <button class="tombolBawah tengah"><i class="fa-solid fa-circle"></i></button>
         <button class="tombolBawah tengah"><i class="fa-regular fa-circle"></i></button>
+        <button class="tombolBawah tengah"><i class="fa-solid fa-circle"></i></button>
+        <button class="tombolBawah tengah"><i class="fa-solid fa-circle"></i></button>
         <button class="tombolBawah next" 
-        onclick="navigateToPage('wanita-baju.html')"><i class="fa-solid fa-arrow-right-long"></i></button>
+        onclick="navigateToPage('wanita-baju4.html')"><i class="fa-solid fa-arrow-right-long"></i></button>
     </div>
+
+
     
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
