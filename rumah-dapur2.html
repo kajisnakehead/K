@@ -121,7 +121,7 @@
 
     <div class="tagMenu-container">
         <img src="assets/images/sekat.jpg" alt="Banner" class="tagMenu" >
-        <span class="teks-di-depan">Celana  Balita / Anak</span>
+        <span class="teks-di-depan">Perlengkapan Dapur</span>
     </div>
 
     
@@ -133,7 +133,7 @@
         // Fungsi untuk mengambil data dari file CSV
         function getDataFromCSV() {
             // URL file CSV
-            const csvUrl = 'assets/database/bayi-celana.csv';
+            const csvUrl = 'assets/database/rumah-dapur.csv';
 
             // Lakukan request untuk mengambil file CSV
             fetch(csvUrl)
@@ -150,7 +150,7 @@
                     });
 
                     // Memotong array items untuk membatasi hanya 12 baris
-                    const slicedItems = items.slice(0, 12);
+                    const slicedItems = items.slice(12, 24);
 
                     // Menampilkan DataListing
                     const DataListing = document.getElementById('DataListing');
@@ -193,13 +193,15 @@
 
     <div class="containerBawah">
         <button class="tombolBawah previous" 
-        onclick="navigateToPage('bayi-celana4.html')"><i class="fa-solid fa-arrow-left-long"></i></button>
+        onclick="navigateToPage('rumah-dapur.html')"><i class="fa-solid fa-arrow-left-long"></i></button>
+        <button class="tombolBawah tengah"><i class="fa-solid fa-circle"></i></button>
         <button class="tombolBawah tengah"><i class="fa-regular fa-circle"></i></button>
         <button class="tombolBawah tengah"><i class="fa-solid fa-circle"></i></button>
         <button class="tombolBawah tengah"><i class="fa-solid fa-circle"></i></button>
-        <button class="tombolBawah tengah"><i class="fa-solid fa-circle"></i></button>
         <button class="tombolBawah next" 
-        onclick="navigateToPage('bayi-celana2.html')"><i class="fa-solid fa-arrow-right-long"></i></button>
+        onclick="navigateToPage('rumah-dapur3.html')"><i class="fa-solid fa-arrow-right-long"></i></button>
+        
+    
     </div>
     
 
