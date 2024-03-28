@@ -1,0 +1,61 @@
+/* Atur containerCarousel2 agar selalu mengambil penuh lebar layar */
+.containerCarousel2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .carousel2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Penting untuk memastikan bahwa slide yang tidak aktif tidak ditampilkan */
+  }
+  
+  .slide {
+    flex: 0 0 33.333%; /* Membuat setiap slide memakan 1/3 dari lebar container */
+    max-width: 33.333%; /* Maksimal lebar setiap slide */
+    box-sizing: border-box;
+    padding: 5px; /* Memberikan sedikit ruang antar gambar */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Pastikan gambar menutupi area tanpa distorsi, tapi bisa terpotong */
+  }
+  
+  /* Responsifitas */
+  @media (max-width: 768px) {
+    .slide {
+      flex: 0 0 30%; /* Pada layar yang lebih kecil, tiap slide akan mengambil penuh lebar layar */
+      max-width: 100%;
+    }
+  }
+  
+  .prevIndex1, .nextIndex1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #8787876f;
+    border: none;
+    padding: 1vw 2vw; /* Menggunakan vw untuk membuat ukuran padding responsif */
+    cursor: pointer;
+    font-size: 6vw;
+    border-radius: 4vw;
+    color: rgb(0, 0, 0);
+  }
+
+  .prevIndex1 {
+    left: 0; /* Menempatkan tombol "Previous" di sebelah kiri carousel */
+}
+
+.nextIndex1 {
+    right: 0; /* Menempatkan tombol "Next" di sebelah kanan carousel */
+}
+  
+  /* Penyesuaian tambahan untuk button jika diperlukan */
+  
